@@ -1,12 +1,20 @@
+import com.google.gson.FieldNamingPolicy;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         System.out.println("Hello world!");
+        Gson gson = new GsonBuilder().
+                setFieldNamingPolicy(FieldNamingPolicy.
+                        UPPER_CAMEL_CASE).setPrettyPrinting() // para que se vea más pretty
+                .create();
 
     double moneda=0.0;
-    double monedaConversion=0.0;
+
     Scanner lectura = new Scanner(System.in);
 
 
